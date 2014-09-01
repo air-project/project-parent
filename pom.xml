@@ -81,7 +81,7 @@
 			</resource>
 		</resources>
 		<filters>
-			<filter>../project-parent/props-${env}.properties</filter>
+			<filter>../props-${env}.properties</filter>
 		</filters>
 		<pluginManagement>
 			<plugins>
@@ -780,8 +780,11 @@
 		</repository>
 	</repositories>
 	<modules>
+		<module>project-utils</module>
 		<module>../spring-quartz</module>
-  </modules>
+		<module>spring-quartz</module>
+		<module>project-test</module>
+	</modules>
 	<profiles>
 		<profile>
 			<id>dev</id>
