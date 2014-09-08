@@ -36,8 +36,12 @@
 		<httpcomponents-version>4.2.3</httpcomponents-version>
 		<poi-version>3.9</poi-version>
 		<beanutils-version>1.8.3</beanutils-version>
+		<hibernate4.version>4.1.7.Final</hibernate4.version>
+		<mysql.version>5.1.18</mysql.version>
+		<c3p0.version>0.9.0.2</c3p0.version>
+		<spring-version>4.1.0.RELEASE</spring-version>
 		<spring-version>3.2.4.RELEASE</spring-version>
-		<spring-security-version>3.1.4.RELEASE</spring-security-version>
+<!-- 		<spring-security-version>3.1.4.RELEASE</spring-security-version> -->
 		<mybatis-version>3.2.2</mybatis-version>
 		<mybatis-spring-version>1.2.0</mybatis-spring-version>
 		<camel-version>2.10.4</camel-version>
@@ -238,10 +242,6 @@
 			<artifactId>hamcrest-all</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.struts</groupId>
-			<artifactId>struts2-junit-plugin</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jsp-api</artifactId>
 		</dependency>
@@ -357,7 +357,7 @@
 			</dependency>
 			<dependency>
 				<groupId>org.apache.camel</groupId>
-				<artifactId>camel-freemarker</artifactId>
+				<artifactId>camel-hifreemarker</artifactId>
 				<version>${camel-version}</version>
 			</dependency>
 			<dependency>
@@ -574,6 +574,33 @@
 				<version>${cxf-version}</version>
 				<scope>provided</scope>
 			</dependency>
+			<!-- hibernate -->
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-core</artifactId>
+				<version>${hibernate4.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>${mysql.version}</version>
+			</dependency>
+			
+			<dependency>  
+		        <groupId>org.hibernate</groupId>  
+		        <artifactId>hibernate-entitymanager</artifactId>  
+		        <version>${hibernate4.version}</version>  
+		    </dependency>  
+		    <dependency> 
+			    <groupId>c3p0</groupId> 
+			    <artifactId>c3p0</artifactId> 
+			    <version>${c3p0.version}</version>   
+			</dependency> 
+			<dependency> 
+			    <groupId>org.hibernate</groupId> 
+			    <artifactId>hibernate-c3p0</artifactId> 
+			    <version>${hibernate4.version}</version> 
+			</dependency> 
 			<!-- struts2 config -->
 			<dependency>
 				<groupId>org.apache.struts</groupId>
@@ -767,8 +794,6 @@
 					<artifactId>standard</artifactId>
 					<version>1.1.2</version>
 				</dependency> 
-
-			
 			
 		</dependencies>
 	</dependencyManagement>
@@ -781,8 +806,6 @@
 	</repositories>
 	<modules>
 		<module>project-utils</module>
-		<module>../spring-quartz</module>
-		<module>spring-quartz</module>
 		<module>project-test</module>
 	</modules>
 	<profiles>
